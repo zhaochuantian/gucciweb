@@ -1,0 +1,58 @@
+@charset "UTF-8";
+html, body {
+  height: 100%; }
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, input, textarea, button, select {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "微软雅黑"; }
+
+img {
+  vertical-align: middle;
+  border: 0; }
+
+ul li {
+  list-style: none; }
+
+ol li {
+  list-style: none; }
+
+input:focus, textarea:focus, button:focus {
+  outline: none; }
+
+button {
+  cursor: pointer !important; }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px; }
+
+a:hover {
+  text-decoration: none; }
+
+/*************************************************************common*****************************/
+.cl:after {
+  content: "";
+  display: block;
+  clear: both;
+  overflow: hidden;
+  height: 0;
+  visibility: hidden; }
+
+.cl {
+  zoom: 1;
+  overflow: hidden; }
+
+.textoverflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.m0 {
+  margin: 0; }
+
+.font12 {
+  font-size: 12px; }
