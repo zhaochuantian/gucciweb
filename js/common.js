@@ -1,21 +1,12 @@
 $.ajax({
-    url: "code/vadio.json",
-    type: "GET",
-    success: function(res){
-        //将数据进行解析，添加到页面上
-        var html = "";
-        html += "<video src=" + res[0].vadio + " autoplay  loop>    </video>";
-        $(".banner-title").before(html);
-    }
-})
-$.ajax({
      url: "code/nav.json",
      type: "GET",
      success: function(res){
-         for(let i = 0 ; i < res.length ; i++){
+     	
+        for(let i = 0 ; i < res.length ; i++){
             //在这里 我们通过第一次循环 创造的每个fixd中可见的a标签，然后 下一步在每次循环中间找到各自的subTitle，当我找到subTitle的时候  subtitle的内容包括  女士  男士  官网专享 还有各自下面的子标题   所以接下来通过第一次针对dd的循环 来把女士 男士 官网专享来加上
-            $(".header-nav").append("<li class='navlis'><a href=''>" + res[i].title + "</li>");
-            $(".header-nav li").eq(i).append("<div class='header-subnav cl'><div class='header-sub-mid cl'></div></div>");
+            $(".header-nav").append("<li class='navlis'>" + res[i].title + "</li>");
+            $(".header-nav li").eq(i).append("<div class='header-subnav cl' style='height:0; opacity:0;'><div class='header-sub-mid cl'></div></div>");
             for(var j = 0 ; j < res[i].subTitle.length ; j++){
                 $(".header-sub-mid").eq(i).append("<dl><dt></dt></dl>");
                 var strDt = res[i].subTitle[j].title;
@@ -25,6 +16,27 @@ $.ajax({
                 }
             }
         }
+        $(".navlis").eq(0).click(function(){
+        	window.location.href="html/runway.html";
+        })
+        $(".navlis").eq(1).click(function(){
+        	window.location.href="html/women.html";
+        })
+        $(".navlis").eq(2).click(function(){
+        	window.location.href="html/men.html";
+        })
+        $(".navlis").eq(3).click(function(){
+        	window.location.href="html/watches.html";
+        })
+        $(".navlis").eq(4).click(function(){
+        	window.location.href="html/decor.html";
+        })
+        $(".navlis").eq(5).click(function(){
+        	window.location.href="html/gifts.html";
+        })
+        $(".navlis").eq(6).click(function(){
+        	window.location.href="html/stories.html";
+        })
          $(".header-sub-mid").eq(0).append("<div id='navBanner0'></div>");
          $(".header-sub-mid").eq(1).append("<div id='navBanner1'></div>");
          $(".header-sub-mid").eq(2).append("<div id='navBanner2'></div>");
@@ -132,6 +144,8 @@ window.onload = function(){
             }
         })
     }
+    
+    
     var oUl = document.getElementById("ul1");
     var aLis = oUl.getElementsByClassName("navlis");
     var oHeader = document.getElementById("header")
@@ -144,19 +158,80 @@ window.onload = function(){
         node.style.height = "auto";
         node.iHeight = node.offsetHeight;
         node.style.height = "0px";
-        aLis[l].onmouseover = function(){
-            var oDiv = this.getElementsByClassName("header-subnav")[0];
-            startMove(oDiv, {
-                height: oDiv.iHeight,
-                opacity: 95
-            })
-        }
-        aLis[l].onmouseout = function(){
-            var oDiv = this.getElementsByClassName("header-subnav")[0];
+        
+//      var el = window.document.body;//声明一个变量，默认值为body
+//		window.document.body.onmouseover = function(event){
+//		 	el = event.target;
+////		  console.log('当前鼠标在', el, '元素上');//在控制台中打印该变量
+//			if(el == oUl || el == aLis){
+//				ulicon++;
+//		  	}
+//			
+//		}
+		var isDown = false;
+		$("#ul1").mouseenter(function(ev){
+			var e = ev ||window.ev
+			isDown = true;
+			e.stopPropagation()
+		}).mouseleave(function(ev){
+			var e = ev || window.ev
+			isDown = false;
+			e.stopPropagation()
+		})
+		aLis[l].onmouseover = function(ev){
+			var e = ev || window.ev;
+			if(isDown == false){
+				var oDiv = this.getElementsByClassName("header-subnav")[0];					
+	        	startMove(oDiv, {
+	                height: oDiv.iHeight,
+	                opacity: 95
+	           })
+	        	
+	      }else if(isDown == true){
+				var oDiv = this.getElementsByClassName("header-subnav")[0];
+				oDiv.style.height = oDiv.iHeight + "px";
+				oDiv.style.opacity = 95
+			}
+	      e.stopPropagation();
+		}
+		
+		$(".navlis").eq(l).mouseleave(function(){
+			var oDiv = this.getElementsByClassName("header-subnav")[0];
             startMove(oDiv, {
                 height: 0,
                 opacity: 0
             })
-        }
+		})
     }
+    $("#footer").append("<div class='footer-cent cl' id='footerCenter'></div>");
+    $.ajax({
+    	url:"code/foot.json",
+    	type:"GET",
+    	success:function(res){
+    		for(var o = 0 ; o < 5 ; o++){
+    			$("#footerCenter").append("<ul class = 'footnav'></ul>");
+    			for(var p = 0 ; p < res[o].title.length; p++){
+    				$(".footnav").eq(o).append("<li class='footli'><a href=''>" + res[o].title[p] + "</a></li>");
+    			}    			
+    		}
+    		for(var r = 5 ; r < 6; r++){
+    			$("#footerCenter").append("<ul class = 'footnav'></ul>");
+    			for(var p = 0 ; p < res[r].title.length; p++){
+    				$(".footnav").eq(r).append("<li class='footli'>" + res[r].title[p] + "</li>");
+    			}    			
+    		}
+    		var oFooterCenter = document.getElementById("footerCenter");
+    		var footerleft = document.body.clientWidth - oFooterCenter.offsetWidth;
+    		console.log(footerleft)
+    		oFooterCenter.style.left = footerleft / 2 + "px";
+    	}
+    })
+    
 }
+$(function(){
+	if($.cookie("User")){
+		var sc_name = $.cookie("User");
+		$("#loginGucci").html("欢迎您，" + sc_name);
+	}
+})
+

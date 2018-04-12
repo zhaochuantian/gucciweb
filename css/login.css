@@ -1,0 +1,79 @@
+.login {
+  height: 600px;
+  background-color: #e7e7e7; }
+  .login .insert {
+    text-align: center;
+    line-height: 115px;
+    font-size: 28px;
+    background: #e7e7e7 url(../images/loginline.jpg) center bottom no-repeat; }
+  .login .form {
+    width: 770px;
+    margin: auto;
+    height: 380px;
+    position: relative; }
+    .login .form .form-left {
+      width: 303px;
+      height: 284px;
+      padding: 66px 44px 0 37px;
+      border-right: 1px solid white;
+      position: relative; }
+    .login .form .form-right {
+      width: 300px;
+      height: 284px;
+      padding: 66px 44px 0 37px;
+      position: absolute;
+      right: 0;
+      top: 0; }
+
+#loginNumber, #loginPassword, #loginPassword1 {
+  border: 0;
+  background-color: white;
+  line-height: 37px;
+  width: 100%;
+  text-indent: 14px;
+  margin-top: 9px; }
+
+#loginPassword1 {
+  border: 0;
+  background-color: white;
+  line-height: 37px;
+  width: 100%;
+  text-indent: 14px;
+  margin-top: 9px; }
+
+input::-webkit-input-placeholder {
+  color: #c8c8c8; }
+
+#remberme, #remberchecked {
+  margin: 25px 0 25px 0;
+  color: #c8c8c8;
+  border: 0;
+  background: #f5f5f5;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 205px;
+  z-index: 10; }
+
+#remberchecked {
+  background: url(../images/checkedd.jpg);
+  z-index: 9; }
+
+#submit {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background-color: #c1b497;
+  color: white;
+  cursor: pointer; }
+
+.forgetit {
+  line-height: 40px;
+  text-align: center;
+  color: #c1b497;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-block;
+  float: right; }

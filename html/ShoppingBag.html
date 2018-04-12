@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>购物袋</title>
+		<link rel="stylesheet" type="text/css" href="../css/runway.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/gray.css"/>
+		<style type="text/css">
+			#shopcode ul li{widows: 300px;float: left;}
+			#shopcode ul{padding-bottom: 50px;}
+			#buyBag{line-height: 100px;font-size: 16px;text-align: center;}
+		</style>
+		<link rel="icon" href="../images/favicon_1.ico" type="image/x-icon">
+		<script type="text/javascript" src="../js/startMove.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/commonhtml.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"../code/maingoods.json",
+					async:true,
+					success:function(res){
+						var sc_arr = eval($.cookie("goods"));
+						var html = '';
+						var allPrice = 0;
+						for(var i in sc_arr){
+							html += "<li><img src=" + res[sc_arr[i].id].img1 + "><p class='goods_1'>" + res[sc_arr[i].id].title + "</p><p class='goods_2'>" + res[sc_arr[i].id].price + "</p><p style='font-size:12px;'>数量：" + sc_arr[i].num + "</p></li>";
+							var iPrice = res[sc_arr[i].id].price.substr(1);
+							
+							allPrice += Number(iPrice) * sc_arr[i].num;
+							
+//							allPrice += parseInt(res[sc_arr[i].id].price) * sc_arr[i].num;
+						}
+						$("#shopcode ul").html(html);
+						$("#buyBag").html( "总价格 ： ￥" + allPrice);
+					}					
+				})				
+			})			
+		</script>
+	</head>
+	<body>
+		<header class = "header-fixed" id="header">
+			<div class = "kuan">
+				<div class = "header-left">
+					<a href="">中国</a>
+					<a href="">简体中文</a>
+					<a href="">客户服务</a>
+				</div>
+				<div class = "header-right">
+					<a href="shoppingBag.html" id="shoppingBag">购物袋</a>
+					<a href="insert.html">注册</a>
+					<a href="login.html" id="loginGucci">登录</a>
+				</div>
+				<div class="header-center" cl>
+					<a href="../index.html" class="logo"> <img src="../images/gucci-logo@2x.png"/></a>
+					<ul class="header-nav" id="ul1">
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="banner" id="bannerimage" style="margin-top: 100px; z-index: -1; background:  url(../images/Gucci/15174854651316920_content_CategoryHeroHeaderStandard_1600x533_1508318106_CategoryHeroHeaderStandard_S81-CRUISE-HERO-40_001_Default.jpg) center center no-repeat; background-size:  auto 119%;" >
+			
+			<div class = banner-title>
+				<p>购物袋</p>
+			</div>
+		</div>
+		<div class="box cl" style="background-color: #E8E8E8; top: 0;" >
+			<div id="shopcode">
+				<ul class="cl" style="padding: 0 80px;">
+				</ul>
+				<div id="buyBag">
+					
+				</div>
+			</div>
+			
+		</div>
+		<footer id="footer"></footer>
+	</body>
+</html>

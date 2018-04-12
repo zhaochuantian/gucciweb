@@ -1,6 +1,10 @@
 @charset "UTF-8";
 html, body {
-  height: 100%; }
+  height: 100%;
+  min-width: 1060px !important; }
+
+body {
+  -webkit-overflow-scrolling: touch; }
 
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, input, textarea, button, select {
   margin: 0;
@@ -27,7 +31,7 @@ button {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 12px; }
 
 a:hover {
@@ -56,3 +60,339 @@ a:hover {
 
 .font12 {
   font-size: 12px; }
+
+@font-face {
+  font-family: hyx;
+  src: url(../fonts/HYXiDengXianJ.ttf); }
+
+#shopthing {
+  width: 480px;
+  height: 775px;
+  position: fixed;
+  z-index: 99999;
+  top: 55px;
+  right: 10px;
+  overflow-x: hidden;
+  background: #e8e8e8;
+  display: none; }
+  #shopthing ul li {
+    height: 120px;
+    padding: 10px 20px; }
+    #shopthing ul li img {
+      width: 90px;
+      float: left; }
+
+.goods-alt1 {
+  float: right;
+  font-size: 12px;
+  line-height: 28px;
+  width: 200px; }
+
+.goods-alt2 {
+  float: right;
+  font-size: 12px;
+  line-height: 30px;
+  width: 180px; }
+
+.banner video {
+  position: absolute;
+  z-index: -9;
+  width: 100%; }
+
+.banner-title {
+  position: absolute;
+  top: 280px;
+  z-index: 5;
+  text-align: center;
+  width: 100%; }
+
+.banner-title p {
+  color: white;
+  font-size: 58px;
+  font-family: hyx; }
+
+.banner-title a {
+  display: inline-block;
+  width: 145px;
+  height: 40px;
+  margin: 1%;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  background-color: #c1b497; }
+
+.banner-title a:hover {
+  background-color: #d5cab4;
+  color: white; }
+
+.rectangle {
+  display: inline-block;
+  width: 145px;
+  height: 40px;
+  margin: 1%;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  background-color: #c1b497;
+  font-family: hyx; }
+
+.rectangle:hover {
+  background-color: #d5cab4;
+  color: white; }
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background-color: #25211e;
+  z-index: 9999; }
+
+.header-left a {
+  display: inline-block;
+  margin: 28px 1%;
+  color: #bab48f;
+  text-align: center;
+  line-height: 12px;
+  font-size: 12px;
+  float: left; }
+
+.header-left a:hover {
+  color: #c1b497; }
+
+.header-right a {
+  display: inline-block;
+  margin: 28px 1%;
+  color: #bab48f;
+  text-align: center;
+  line-height: 12px;
+  font-size: 12px;
+  float: right; }
+
+.header-right a:hover {
+  color: #c1b497; }
+
+#bannerimage {
+  z-index: -1; }
+
+.header-center {
+  margin: auto;
+  text-align: center; }
+
+.header-center .logo {
+  display: inline-block;
+  width: 180px;
+  padding-top: 20px; }
+
+.header-center img {
+  width: 100%; }
+
+.header-nav {
+  position: relative;
+  top: 26px;
+  left: 0;
+  min-width: 1000px; }
+
+.header-nav li {
+  display: inline-block;
+  width: 80px;
+  height: 42px;
+  cursor: pointer;
+  color: white;
+  line-height: 42px;
+  font-size: 12px; }
+
+.header-nav li:hover {
+  color: #c1b497; }
+
+.header-subnav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: black;
+  background-color: white;
+  top: 45px;
+  opacity: 0;
+  text-align: center;
+  cursor: auto;
+  height: 0;
+  overflow: hidden; }
+
+.header-sub-mid {
+  display: inline-block; }
+
+.header-subnav dl {
+  float: left;
+  width: 175px;
+  font-size: 12px;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  text-align: left; }
+
+.header-subnav dt {
+  line-height: 41px;
+  font-weight: 800; }
+
+.header-subnav dd {
+  line-height: 31px; }
+
+.header-subnav dt a {
+  color: #676363; }
+
+.header-subnav dd a {
+  color: #676363; }
+
+#navBanner1, #navBanner2 {
+  float: left;
+  width: 165px;
+  height: 253px;
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 55px;
+  overflow: hidden; }
+
+#looper, #looper2 {
+  width: 1485px;
+  position: absolute; }
+
+#navBannerImg {
+  margin-top: 25px;
+  margin-bottom: 55px; }
+
+#looper .loopli {
+  width: 165px;
+  height: 230px;
+  overflow: hidden;
+  margin: 0;
+  float: left; }
+  #looper .loopli img {
+    height: 100%; }
+
+#looper2 .loopli {
+  width: 165px;
+  height: 230px;
+  overflow: hidden;
+  margin: 0;
+  float: left; }
+  #looper2 .loopli img {
+    height: 100%; }
+
+#btns, #btns2 {
+  position: relative;
+  top: 230px;
+  height: 21px; }
+
+#btns .smallbutton {
+  width: 4px;
+  height: 4px;
+  border-radius: 3px;
+  border: 1px solid #e9e9e9;
+  float: left;
+  margin: 7px;
+  margin-top: 15px;
+  cursor: pointer; }
+
+#btns2 .smallbutton {
+  width: 4px;
+  height: 4px;
+  border-radius: 3px;
+  border: 1px solid #e9e9e9;
+  float: left;
+  margin: 7px;
+  margin-top: 15px;
+  cursor: pointer; }
+
+.active {
+  background-color: #c1b497; }
+
+#navBanner4, #navBanner5 {
+  float: left;
+  height: 150px;
+  margin-top: 25px; }
+
+#navBanner5 {
+  padding-bottom: 55px; }
+
+footer {
+  height: 533px;
+  width: 100%;
+  background-color: #25211e;
+  text-align: center;
+  position: relative; }
+  footer .footer-cent {
+    color: white;
+    vertical-align: middle;
+    width: 1010px;
+    position: absolute;
+    top: 88px;
+    height: 360px; }
+    footer .footer-cent .footnav {
+      float: left;
+      width: 187px; }
+      footer .footer-cent .footnav span {
+        color: #b3a68b; }
+
+footer .footnav:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 150px; }
+
+footer .footnav:nth-child(7) {
+  position: absolute;
+  right: 0;
+  top: 150px;
+  width: 255px; }
+
+footer .footnav:nth-child(7) li {
+  font-size: 12px; }
+
+footer .footnav:nth-child(6) li {
+  font-size: 12px; }
+
+footer .footnav:nth-child(6) li:nth-child(1) {
+  line-height: 66px;
+  font-weight: 800; }
+
+footer .footnav:nth-child(6) li:nth-child(2) {
+  color: #95928f; }
+
+footer .footnav:nth-child(7) li:nth-child(1) {
+  line-height: 66px;
+  font-weight: 800; }
+
+footer .footnav:nth-child(6) {
+  width: 255px; }
+
+.footnav li a {
+  color: #95928f;
+  line-height: 25px; }
+
+.footnav li:nth-child(1) a {
+  line-height: 66px;
+  font-weight: 800;
+  color: white !important; }
+
+@media only screen and (min-width: 320px) and (max-width: 1100px) {
+  .pre3 {
+    width: 1000px !important; }
+  .logo {
+    width: 90px !important; }
+    .logo img {
+      width: 90px !important; }
+  #box2 {
+    height: 1600px; }
+  #pointer {
+    height: 5000px; }
+  .header-subnav {
+    overflow: hidden !important;
+    height: 42px !important; }
+  #header {
+    overflow: hidden; }
+  .header-subnav {
+    padding: 0;
+    display: none; } }
+
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+  #header {
+    overflow-x: scroll;
+    overflow-y: hidden; } }

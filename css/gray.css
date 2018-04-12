@@ -1,0 +1,16 @@
+.hovershop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #f5f5f5;
+  z-index: 1; }
+
+.shopsmall {
+  height: 325px;
+  padding: 0;
+  margin-bottom: 1px; }
+  .shopsmall img {
+    height: 200px; }
+
+.shopbottom {
+  top: 326px; }

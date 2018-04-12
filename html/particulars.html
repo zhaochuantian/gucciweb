@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/runway.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/gray.css"/>
+		<link rel="icon" href="../images/favicon_1.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<style type="text/css">
+			.sc_btn{cursor: pointer;margin-top: 140px; line-height: 42px; color: white;text-align: center;background: #c1b497;}
+			.sc_btn:hover {background: #d5cab4;}
+			.form-left img{width: 100%; cursor: move;}
+			#bigger{width: 300px;height: 300px;position: fixed;top: 200px;left: 200px;z-index: 10;overflow: hidden;display: none;}
+			#bigger img{width: 200%;height: 200%;position: relative;left: -100px;top: -100px;}
+		</style>
+		<script type="text/javascript" src="../js/startMove.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/commonhtml.js"></script>
+		<script type="text/javascript" src="../js/ajax.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"../code/maingoods.json",
+					async:true,
+					success:function(res){
+//						sc_car();
+						var _search = location.search.substring(4);
+						$("#img_search").append("<img src= " + res[_search].img1 + ">");
+						$("#bigger").append("<img src= " + res[_search].img1 + ">");
+						$("#title_search").append("<h3>" + res[_search].title + "</h3>");
+						$("h3").after("<p style='line-height:50px;'>" + res[_search].price + "</p>");
+						$("#title_search").append("<div class='sc_btn' id='" + _search + "'>加入购物袋</div>")
+						$(".sc_btn").click(function(){
+							var id = this.id;
+							var first = $.cookie("goods") == null ? true : false;
+							if(first){
+								$.cookie("goods", "[{id:'" + id + "',num:1}]", {
+									expires:7
+								});	
+							}else{
+								var str = $.cookie("goods");
+								console.log(str)
+								var arr = eval(str);
+								var same = false;
+								for(var i in arr){
+									if(arr[i].id == id){
+										arr[i].num = arr[i].num + 1;
+										var cookieStr = JSON.stringify(arr);
+										$.cookie("goods",cookieStr,{
+											expires:7
+										});
+										same = true;
+										break;
+									}
+								}
+								if(!same){
+									var obj = {id:id,num:1};
+									arr.push(obj);
+									var cookieStr = JSON.stringify(arr);
+									$.cookie("goods",cookieStr,{
+										expires:7
+									});
+								}
+							}
+							sc_car()
+//							return false;
+						})
+						function sc_car(){
+							var sc_str = $.cookie("goods");
+							if(sc_str){
+								var sc_arr = eval(sc_str);
+								var sc_num = 0;
+								for(var i in sc_arr){
+									sc_num = Number(sc_arr[i].num) + sc_num;
+								}
+								$("#shoppingBag").html("购物袋(" + sc_num + ")")
+							}
+						}
+						$("title").html(res[_search].title);
+						var oSearch = document.getElementById("img_search");
+						var oImg = oSearch.getElementsByTagName("img");
+						var oForm = document.getElementsByClassName("form")[0];
+						oImg[0].onmouseover = function(){
+							oImg[0].onmousemove = function(event){
+								var e = event || window.event;
+								var oBigger = document.getElementById("bigger");								
+								console.log(oForm.offsetTop + 66)
+								oBigger.style.display = "block"
+								oBigger.style.left = e.clientX + 15 + "px";
+								oBigger.style.top = e.clientY + 15 + "px";
+								var oSmallImg = oBigger.getElementsByTagName("img")[0];
+								oSmallImg.style.left = - (e.pageX - (oForm.offsetLeft + 37)) * 2 + "px";
+								oSmallImg.style.top = - (e.pageY - (oForm.offsetTop + 66)) * 2 + "px";
+							}
+						}						
+						oImg[0].onmouseleave = function(){
+							var oBigger = document.getElementById("bigger");
+							oBigger.style.display = "none";
+						}
+					}					
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+		<header class = "header-fixed" id="header">
+			<div class = "kuan">
+				<div class = "header-left">
+					<a href="">中国</a>
+					<a href="">简体中文</a>
+					<a href="">客户服务</a>
+				</div>
+				<div class = "header-right">
+					<a href="shoppingBag.html" id="shoppingBag">购物袋</a>
+					<a href="insert.html">注册</a>
+					<a href="login.html" id="loginGucci">登录</a>
+				</div>
+				<div class="header-center" cl>
+					<a href="../index.html" class="logo"> <img src="../images/gucci-logo@2x.png"/></a>
+					<ul class="header-nav" id="ul1">
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div id="bannerimage"></div>
+		<div class="cl login" style="margin-top: 110px;">
+			<div class="insert">
+				商品详情
+			</div>
+			<div class="form">
+				<div class="form-left" id="img_search">
+					
+					
+					
+				</div>
+				<div id="bigger">
+					
+				</div>
+				<div class="form-right" id="title_search">
+					
+					
+					
+				</div>
+			</div>
+		
+		
+		
+		
+		</div>
+		<div id="shopthing">
+			<ul>
+			</ul>
+		</div>
+		
+		
+		
+		
+		<footer id="footer"></footer>
+	</body>
+</html>
+

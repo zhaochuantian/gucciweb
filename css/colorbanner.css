@@ -1,0 +1,102 @@
+.decor-part1 {
+  width: 1010px;
+  margin: auto;
+  height: 590px;
+  background-color: white;
+  padding-top: 50px; }
+  .decor-part1 .decor-part1-left {
+    float: left;
+    width: 445px; }
+    .decor-part1 .decor-part1-left .guccip1 {
+      font-size: 50px;
+      text-align: center;
+      margin-top: 109px;
+      margin-bottom: 20px; }
+    .decor-part1 .decor-part1-left .guccip2 {
+      font-style: italic;
+      text-align: center; }
+  .decor-part1 .decor-part1-right {
+    width: 520px;
+    height: 570px;
+    float: right; }
+    .decor-part1 .decor-part1-right .colorloop {
+      width: 425px;
+      height: 425px;
+      margin: auto; }
+      .decor-part1 .decor-part1-right .colorloop ul {
+        position: relative;
+        width: 425px;
+        height: 425px; }
+        .decor-part1 .decor-part1-right .colorloop ul li {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 11; }
+          .decor-part1 .decor-part1-right .colorloop ul li img {
+            width: 425px;
+            height: 425px; }
+
+.banner {
+  background: url(../images/15203878916838372_content_HeroGridStandard_1600x533_1508259606_HeroGridStandard_S81-CRUISE-HERO-16_001_Default.jpg) center center no-repeat;
+  background-size: auto 100%; }
+
+.decoractive {
+  background-color: #c1b497; }
+
+#decorbtn {
+  margin-left: 133px; }
+
+#decorbtn li {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  margin: 20px 18px;
+  cursor: pointer; }
+
+.decor-part2 {
+  height: 600px;
+  width: 99%;
+  position: relative; }
+  .decor-part2 .part2-left {
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden; }
+    .decor-part2 .part2-left img {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      margin-left: -512px; }
+  .decor-part2 .part2-right {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background-color: #e7e7e7; }
+    .decor-part2 .part2-right img {
+      vertical-align: middle; }
+    .decor-part2 .part2-right p {
+      font-size: 20px; }
+
+.decor-part3 {
+  width: 100%;
+  height: 700px;
+  background: url(../images/Gucci/15161931341832712_content_CapsuleHeroHeaderStandard_1600x533_1504876504_CapsuleHeroHeaderStandard_Decor-CN-VA_001_Default.jpg) center center no-repeat;
+  background-size: auto 100%;
+  text-align: center;
+  line-height: 700px; }
+
+@media only screen and (min-width: 1590px) and (max-width: 1920px) {
+  #bannerimage img {
+    width: 100%; } }
+
+@media only screen and (min-width: 320px) and (max-width: 1250px) {
+  #bannerimage img {
+    display: none; } }

@@ -1,0 +1,121 @@
+body {
+  font-family: hyx !important; }
+
+.banner {
+  height: 533px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #25211e; }
+
+.banner img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -800px; }
+
+.banner-title {
+  top: 220px !important; }
+
+.box {
+  padding: 8px;
+  background-color: white;
+  position: relative;
+  top: -100px; }
+
+.shop {
+  text-align: center;
+  width: 100%;
+  background-color: #e6e6e6;
+  padding-top: 30px;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: .3s;
+  z-index: 2; }
+
+.hovershop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 1; }
+
+.shop img {
+  height: 500px; }
+
+.shop {
+  padding-bottom: 35px; }
+  .shop .small {
+    font-size: 12px;
+    color: black; }
+
+.goods {
+  display: inline-block;
+  width: 49.5%;
+  position: relative;
+  margin-top: 5px; }
+
+.shop:hover {
+  opacity: 0; }
+
+.color {
+  width: 49.5%;
+  float: left;
+  position: relative; }
+  .color img {
+    width: 100%;
+    height: auto; }
+  .color .colorp {
+    position: absolute;
+    top: 270px;
+    color: white;
+    text-align: center;
+    width: 100%; }
+    .color .colorp .color2 {
+      font-size: 27px;
+      padding-bottom: 36px; }
+
+.preview {
+  width: 100%;
+  text-align: center;
+  background-color: white; }
+  .preview div .pre1 {
+    padding-top: 40px;
+    line-height: 110px;
+    font-size: 35px;
+    display: inline-block;
+    border-bottom: 2px solid #c1b497; }
+  .preview .pre2 {
+    font-style: italic;
+    line-height: 110px;
+    padding-bottom: 10px; }
+  .preview .pre3 {
+    width: 1200px;
+    margin: auto; }
+    .preview .pre3 .sub1 {
+      float: left;
+      width: 49%; }
+      .preview .pre3 .sub1 .sub1p1 {
+        line-height: 55px;
+        color: #cab897;
+        font-size: 12px; }
+      .preview .pre3 .sub1 .sub1p2 {
+        font-size: 18px;
+        line-height: 35px; }
+      .preview .pre3 .sub1 .sub1p3 {
+        padding-bottom: 48px; }
+      .preview .pre3 .sub1 .sub1p3 a {
+        font-style: italic;
+        font-size: 12px; }
+
+@media only screen and (min-width: 780px) and (max-width: 1400px) {
+  .colorp {
+    position: absolute;
+    top: 170px !important; } }
+
+@media only screen and (min-width: 320px) and (max-width: 780px) {
+  .colorp {
+    position: absolute;
+    top: 70px !important; } }

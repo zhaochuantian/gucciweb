@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Gucci官方商城</title>
+		<link rel="stylesheet" type="text/css" href="../css/runway.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<link rel="icon" href="../images/favicon_1.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="../css/gray.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/stories.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/colorbanner.css"/>
+		<script type="text/javascript" src="../js/startMove.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/commonhtml.js"></script>
+		<script type="text/javascript" src="../js/colorbanner.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"../code/maingoods.json",
+					async:true,
+					success:function(res){
+						for(let i = 0 ; i < res.length ; i++){
+							$("#maingoods").append("<li class='goods-li' id='" + res[i].id + "'><a href='particulars.html?id=" + res[i].id + "' target='_blank'><div class='goods-before'><img class='goods-img1' src= " + res[i].img1 + "><div class='goods-out'><img class='goods-img2' src=" + res[i].img2 + "></div></a><div class='goods-information'> <p class='goods-p1' style='font-size: 14px; padding-top: 14px; padding-bottom: 10px;width:100%;'>" + res[i].title + "</p> <p class='goods-p2' style='width:100%;'>" + res[i].price + "</p><p style='line-height:44px;font-size:14px;'>立即购买></p></div></div></li>");
+//							$("#maingoods").on("click",".goods-li",function(){
+//								$(".goods-li").eq(i).click(function(){
+//									window.location.href="particulars.html?id=" + res[i].id ;
+//									
+//								});
+//								return false;
+//							});
+							
+					}
+						$(".goods-li").eq(0).append("<i class='goods-i'>棉质T恤，装饰印有“II Prato di Ganimede Guccification”和狼头图案的红色撞色印花。伽倪莫德斯草坪，位于波波里花园中的一隅</i>");
+						$(".goods-li").eq(7).append("<i class='goods-i'>象牙色卫衣&红色印花，印花带有意大利短语“SprovvedutaEtu”意为“天真年代”，源自公元前一世纪拉丁语诗歌“DeReum Natura（物性论）”，诗文阐述了伊比鸠鲁学派的哲学思想</i>");
+						
+					}
+					
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="shopthing">
+			<ul>
+			</ul>
+		</div>
+		<header class = "header-fixed" id="header">
+			<div class = "kuan">
+				<div class = "header-left">
+					<a href="">中国</a>
+					<a href="">简体中文</a>
+					<a href="">客户服务</a>
+				</div>
+				<div class = "header-right">
+					<a href="shoppingBag.html" id="shoppingBag">购物袋</a>
+					<a href="insert.html">注册</a>
+					<a href="login.html" id="loginGucci">登录</a>
+				</div>
+				<div class="header-center "  >
+					<a href="../index.html" class="logo"> <img src="../images/gucci-logo@2x.png"/></a>
+					<ul class="header-nav" id="ul1">
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="banner" style="margin-top: 100px; " id="bannerimage">
+			<img src="../images/15203878916838372_content_HeroGridStandard_1600x533_1508259606_HeroGridStandard_S81-CRUISE-HERO-16_001_Default.jpg" style="left: 0;margin-left: 0; height: 620px;"/>
+			<div class = banner-title>
+				<p>BUSINESS</p>
+			</div>
+		</div>
+		<div class="box cl" style="overflow: visible;">
+			<div class="decor-part1">
+				<div class="decor-part1-left">
+					<p class="guccip1">Gucci 商城</p>
+					<p class="guccip2">2018春夏系列通过艳丽的色彩和梦幻般的氛围，着力营造出一个超现实的世界，经典双G呼应秀场引入梦的空间设计，铆钉装饰彩色珠光水晶，创造出如万花筒般绚烂的效果</p>
+				</div>
+				<div class="decor-part1-right" id="decorPartRight">
+					<div class="colorloop">
+						<ul id="decorloop">
+							<li style="z-index: 13;" ><img src="../images/15081638902361309_content_BlockQuote_Standard_366x366_1505133004_BlockQuote_Decor-CN-Scent_001_Default.jpg"/></li>
+							<li><img src="../images/15130601624735522_content_BlockQuote_Standard_366x366_1505122212_BlockQuote_Decor-CN-screens_001_Default.jpg"/></li>
+							<li><img src="../images/15081641942881243_content_BlockQuote_Standard_366x366_1505297705_BlockQuote_Decor-Cn-Wallpaper_001_Default.jpg"/></li>
+							<li><img src="../images/15081638902361309_content_BlockQuote_Standard_366x366_1505133004_BlockQuote_Decor-CN-Scent_001_Default.jpg"/></li>
+						</ul>
+						<ol id="decorbtn">
+							<li class="decoractive"></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<div style="padding: 20px;">
+				<ul id="maingoods" class="cl" style="overflow: visible;">
+					
+				</ul>
+								
+			</div>
+		</div>	
+		
+		<div class="decor-part3" style="width: 100%;height: 700px;background: url(../images/15206182037008917_content_HeroGridStandard_1600x533_1518701408_HeroGridStandard_SS18-CAMPAIGN-06_001_Default.jpg) center center no-repeat; background-size: auto 100% ;text-align: center;line-height: 700px;">
+			<img src="../images/jiashi.jpg" style="vertical-align: middle;"/>
+		</div>
+		
+		
+		
+		<footer id="footer"></footer>
+	</body>
+</html>
