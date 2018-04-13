@@ -11,7 +11,6 @@ $.ajax({
     	$("#box3").before("<div class='line'></div>");
     	$("#box3").append("<img src=" + res[6].img + "><div class='indexmid-center'><p class='arter'>" + (res[7].title) + "</p><i>" + (res[7].famous) + "</i></div>");
     	$("#box3").after("<div class='cl box4 box' id='box4'></div>");
-    	$("#box4").before("<div class='line'></div>");			    	
     	$("#box4").append("<a href='' class = 'indexmid-right'><img src=" + (res[0].img) + "></a><div id='midgoods4'><a href=''><img src=" + res[8].img + "></a></div><div class='text-intro'>Guccy印花皮革手拿包</div><div class='buyit'><a class='rectangle ' href=''>点击购买</a></div>");
     	$("#box4").after("<div class='cl box5 box' id='box5'></div>");
     	$("#box5").before("<div class='line'></div>");
